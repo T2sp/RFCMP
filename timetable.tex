@@ -223,6 +223,8 @@
 \newcommand{\lmto}{\longmapsto}
 \newcommand{\btl}{\blacktriangleleft}
 \newcommand{\btr}{\blacktriangleright}
+\usepackage{tabularx}
+\newcolumntype{Y}{>{\arraybackslash}X}
 
 \begin{document}
 
@@ -235,7 +237,7 @@
 
 \begin{table}[H]
     \centering
-    \begin{tabular}{lll}
+    \begin{tabularx}{0.75\linewidth}{llY}
         \toprule
         \multicolumn{1}{l}{\textbf{時間}}
         &\multicolumn{1}{l}{\textbf{講演者}}
@@ -246,14 +248,14 @@
         13:00-14:30 &高間俊至 &$\infty$-圏入門 \\
         15:00-16:30 &川平将志 &スペクトル系列と（Beyond）the Standard Model \\
         17:00-18:30 &谷川昇右 &Instanton Moduli 空間の積分について \\
-    \end{tabular}
+    \end{tabularx}
 \end{table}%
 
 \section*{6月3日 (火) 会場：K206}
 
 \begin{table}[H]
     \centering
-    \begin{tabular}{lll}
+    \begin{tabularx}{0.75\linewidth}{llY}
         \toprule
         \multicolumn{1}{l}{\textbf{時間}}
         &\multicolumn{1}{l}{\textbf{講演者}}
@@ -264,7 +266,7 @@
         13:00-14:30 &宮澤仁 &Recent development of Seiberg-Witten theory and low-dimensional topology \\
         15:00-16:30 &大森寛太郎 &TBA \\
         17:00-18:30 &大森寛太郎 &TBA \\
-    \end{tabular}
+    \end{tabularx}
 \end{table}%
 
 \end{document}
