@@ -226,13 +226,46 @@
 \usepackage{tabularx}
 \newcolumntype{Y}{>{\arraybackslash}X}
 
-\newcommand{\speakerA}{赤坂奎茉 & Symmetric Monoidal $(\infty,\, n)$-categories \\}
-\newcommand{\speakerAA}{赤坂奎茉 & The $(\infty,\, n)$-category of Bordisms and Topological Quantum Field Theory \\}
-\newcommand{\speakerB}{浜中真志 & ADHM構成法入門 \\}
-\newcommand{\speakerBB}{浜中真志 & ADHM構成法のDブレーン解釈 \\}
-\newcommand{\speakerC}{立川裕二 & Anomaly cancellation in superstring theory: a review \\}
-\newcommand{\speakerD}{名取雅生 & TBA \\}
-\newcommand{\speakerE}{西中祐介 & TBA \\}
+\newcommand{\spkA}{赤坂奎茉}
+\newcommand{\spkB}{浜中真志}
+\newcommand{\spkC}{立川裕二}
+\newcommand{\spkD}{名取雅生}
+\newcommand{\spkE}{西中祐介}
+
+\newcommand{\instA}{千葉大学}
+\newcommand{\instB}{名古屋大学 多元数理科学研究科}
+\newcommand{\instC}{東京大学 Kavli IPMU}
+\newcommand{\instD}{東京大学}
+\newcommand{\instE}{名古屋大学 多元数理科学研究科}
+
+\newcommand{\titleA}{Symmetric Monoidal $(\infty,\, n)$-categories}
+\newcommand{\titleAA}{The $(\infty,\, n)$-category of Bordisms and Topological Quantum Field Theory}
+\newcommand{\titleB}{ADHM構成法入門}
+\newcommand{\titleBB}{ADHM構成法のDブレーン解釈}
+\newcommand{\titleC}{Anomaly cancellation in superstring theory: a review}
+\newcommand{\titleD}{TBA}
+\newcommand{\titleE}{TBA}
+
+\newcommand{\abst}[5]{
+    \Large
+    \textbf{#1}
+    \normalsize
+    
+    \vspace{10pt}
+
+    \textbf{講演者} #2（#3）
+
+    \textbf{講演時間} #4
+
+    \vspace{5pt}
+
+    % \textbf{概要} 
+    \begin{quote}
+        #5
+    \end{quote}
+
+    \vspace{10pt}
+}
 
 \begin{document}
 
@@ -253,11 +286,11 @@
         &\multicolumn{1}{l}{\textbf{講演者}}
         &\multicolumn{1}{l}{\textbf{タイトル}} \\
         \midrule
-        10:00-11:30 &\speakerA
+        10:00-11:30 &\spkA &\titleA \\
         11:30-13:00 & &昼休憩 \\
-        13:00-14:30 &\speakerAA
-        15:00-16:30 &\speakerB
-        17:00-18:30 &\speakerBB
+        13:00-14:30 &\spkA &\titleAA \\
+        15:00-16:30 &\spkB &\titleB \\
+        17:00-18:30 &\spkB &\titleBB \\
     \end{tabularx}
 \end{table}%
 
@@ -271,11 +304,11 @@
         &\multicolumn{1}{l}{\textbf{講演者}}
         &\multicolumn{1}{l}{\textbf{タイトル}} \\
         \midrule
-        10:30-12:00 &\speakerC
+        10:30-12:00 &\spkC &\titleC \\
         12:00-13:00 & &昼休憩 \\
-        13:00-14:30 &\speakerC
-        15:00-16:30 &\speakerD
-        17:00-18:30 &\speakerD
+        13:00-14:30 &\spkC &\titleC \\
+        15:00-16:30 &\spkD &\titleD \\
+        17:00-18:30 &\spkD &\titleD \\
     \end{tabularx}
 \end{table}%
 
@@ -289,9 +322,45 @@
         &\multicolumn{1}{l}{\textbf{講演者}}
         &\multicolumn{1}{l}{\textbf{タイトル}} \\
         \midrule
-        10:00-11:30 &\speakerE
-        13:00-14:30 &\speakerE
+        10:00-11:30 &\spkE &\titleE \\
+        13:00-14:30 &\spkE &\titleE \\
     \end{tabularx}
 \end{table}%
+
+\section*{\underline{概要集}}
+
+\section*{9月24日（水）}
+
+\abst{\titleA}{\spkA}{\instA}{10:00-11:30}{
+}
+
+\abst{\titleAA}{\spkA}{\instA}{13:00-14:30}{
+}
+
+\abst{\titleB}{\spkB}{\instB}{15:00-16:30}{
+}
+
+\abst{\titleBB}{\spkB}{\instB}{17:00-18:30}{
+}
+
+\newpage
+
+\section*{9月25日（木）}
+
+\abst{\titleC}{\spkC}{\instC}{10:30-12:00, 13:00-14:30}{
+    \phantom{AA}Anomalies in superstring theories are known to cancel via subtle mechanisms. We begin with the standard perturbative anomaly cancellation, which works uniformly across all theories.
+    
+    \phantom{AA}We then move on to the discussion of the global anomaly cancellation, whose mechanism varies depending on the type of superstring theories in question.
+}
+
+\abst{\titleD}{\spkD}{\instD}{15:00-16:30, 17:00-18:30}{
+}
+
+\newpage
+
+\section*{9月26日（金）}
+
+\abst{\titleE}{\spkE}{\instE}{10:00-11:30, 13:00-14:30}{
+}
 
 \end{document}
