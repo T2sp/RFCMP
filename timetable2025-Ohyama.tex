@@ -1,0 +1,386 @@
+\documentclass{ltjsarticle}
+
+%%%%%%%%%%packages%%%%%%%%%%
+%% colors and links
+\usepackage[svgnames]{xcolor}
+\usepackage[colorlinks,citecolor=DarkGreen,linkcolor=DeepPink,linktocpage,unicode]{hyperref} 
+
+%% equations
+%%%% math
+\usepackage{amsmath,amsfonts,amssymb,amsthm}
+\usepackage{mathtools}
+\usepackage{mathrsfs}
+\usepackage{bm}
+\usepackage{cancel}
+\usepackage{dsfont}
+%%%% physics
+\usepackage{siunitx}
+\usepackage{physics}
+%%%% chemistry
+\usepackage[version=3]{mhchem}
+
+%% positioning
+\usepackage{array}
+\usepackage{float}
+
+%% table
+\usepackage{booktabs}
+\usepackage{multirow}
+\usepackage{hhline}
+\usepackage{caption}
+\captionsetup{format=hang}
+\usepackage{subcaption}
+
+%% figure
+\usepackage{graphicx}
+\usepackage{tikz}
+
+%% decorations
+\usepackage{titlesec}
+\usepackage{picture}
+
+%% framing
+\usepackage{fancybox}
+\usepackage{boites}
+\usepackage{tcolorbox}
+\tcbuselibrary{skins,theorems,breakable}
+
+%% citation
+\usepackage{cite}
+
+%% miscellaneous
+%%%% comment
+\usepackage{comment}
+%%%% Japanese
+\usepackage{ascmac}
+\usepackage{listings} %日本語のコメントアウトをする場合jlisting（もしくはjvlisting）が必要
+\lstset{
+    basicstyle={\ttfamily},
+    identifierstyle={\small},
+    commentstyle={\smallitshape},
+    keywordstyle={\small\bfseries},
+    ndkeywordstyle={\small},
+    stringstyle={\small tfamily},
+    frame={tb},
+    breaklines=true,
+    columns=[l]{fullflexible},
+    numbers=left,
+    xrightmargin=0pt,
+    xleftmargin=27pt,
+    numberstyle={\scriptsize},
+    stepnumber=1,
+    lineskip=-0.5ex
+}
+
+%%macros
+\usepackage{mylogics}
+\usepackage{myalgebra}
+\usepackage{mygeometry}
+\usepackage{myQM}
+
+%%%%%%%%%%optional settings%%%%%%%%%%
+
+%%%%%図表並列%%%%%
+\makeatletter
+\newcommand{\figcaption}[1]{\def\@captype{figure}\caption{#1}}
+\newcommand{\tblcaption}[1]{\def\@captype{table}\caption{#1}}
+\makeatother
+
+%%%%%itemization%%%%%
+\renewcommand{\labelenumi}{\theenumi}
+\renewcommand{\theenumi}{(\arabic{enumi})} % 箇条書きをローマ数字に
+
+%%%%%%theorem environments%%%%%
+\newtheoremstyle{mystyle}%   % スタイル名
+    {}%                      % 上部スペース
+    {}%                      % 下部スペース
+    {\normalfont}%          % 本文フォント
+    {}%                      % インデント量
+    {\bf}%                  % 見出しフォント
+    {.}%                      % 見出し後の句読点
+    {\newline}%                     % 見出し後のスペース
+    {\underline{\thmname{#1}\thmnumber{#2}\thmnote{（#3）}}}%
+    % 見出しの書式 (can be left empty, meaning `normal')
+\theoremstyle{mystyle} % スタイルの適用
+
+\newtheorem{theorem}{定理}[section]
+\newtheorem{definition}{定義}[section]
+\newtheorem{proposition}[definition]{命題}
+\newtheorem{corollary}[theorem]{系}
+\renewcommand{\proofname}{証明}
+
+%proof
+\makeatletter % use at mark
+\renewcommand{\qedsymbol}{$\blacksquare$}
+\renewenvironment{proof}[1][\proofname]{\par
+    \pushQED{\qed}%
+    \normalfont \topsep6\p@\@plus6\p@\relax
+    \trivlist
+    \item[\hskip\labelsep
+        \itshape
+    \textbf{\underline{#1}}]\ignorespaces
+    % {\bf\underline{#1}\@addpunct{.}}]\ignorespaces % ピリオドあり
+}{%
+    \popQED\endtrivlist\@endpefalse
+}
+\makeatother % end at mark
+
+%%%%%%mathtools%%%%%
+\mathtoolsset{showonlyrefs=true} % 被参照数式のみ数式番号割り振り
+\numberwithin{equation}{section}
+
+\makeatletter
+\@addtoreset{equation}{section}
+\makeatother
+
+%%%%%%framing%%%%%
+
+%%%%%title decorations%%%%%
+
+%% section
+% \titleformat{\section}[block]
+% {}{}{0pt}
+% {
+%     \colorbox{teal}{\begin{picture}(0,20)\end{picture}}
+%     \hspace{0pt}
+%     \normalfont \Huge\bfseries \thesection
+%     \hspace{0.5em}
+% }
+% [
+% \begin{picture}(100,0)
+%     \put(3,30){\color{teal}\line(1,0){400}}
+% \end{picture}
+% \
+% \vspace{-50pt}
+% ]
+
+% % subsection
+% \titleformat{\subsection}[block]
+% {}{}{0pt}
+% {
+%     \colorbox{blue}{\begin{picture}(0,10)\end{picture}}
+%     \hspace{0pt}
+%     \normalfont \Large\bfseries \thesubsection
+%     \hspace{0.5em}
+% }
+% [
+% \begin{picture}(100,0)
+%     \put(3,18){\color{blue}\line(1,0){300}}
+% \end{picture}
+% \
+% \vspace{-30pt}
+% ]
+
+% % subsubsection
+% \titleformat{\subsubsection}[block]
+% {}{}{0pt}
+% {
+%     \normalfont \large\bfseries \thesubsubsection
+%     \hspace{0.5em}
+% }
+% [
+% \begin{picture}(100,0)
+%     \put(3,15){\color{black}\line(1,0){200}}
+% \end{picture}
+% \
+% \vspace{-25pt}
+% ]
+
+% section
+% \titleformat{\section}[block]
+% {}{}{0pt}
+% {
+%     \colorbox{blue}{\begin{picture}(0,10)\end{picture}}
+%     \hspace{0pt}
+%     \normalfont \Large\bfseries \thesection
+%     \hspace{0.5em}
+% }
+% [
+% \begin{picture}(100,0)
+%     \put(3,18){\color{blue}\line(1,0){300}}
+% \end{picture}
+% \\
+% \vspace{-30pt}
+% ]
+
+% % subsection
+% \titleformat{\subsection}[block]
+% {}{}{0pt}
+% {
+%     \normalfont \large\bfseries \thesubsection
+%     \hspace{0.5em}
+% }
+% [
+% \begin{picture}(100,0)
+%     \put(3,15){\color{black}\line(1,0){200}}
+% \end{picture}
+% \\
+% \vspace{-25pt}
+% ]
+\mathchardef\mhyphen="2D
+
+\newcommand{\lto}{\longrightarrow}
+\newcommand{\lmto}{\longmapsto}
+\newcommand{\btl}{\blacktriangleleft}
+\newcommand{\btr}{\blacktriangleright}
+\usepackage{tabularx}
+\newcolumntype{Y}{>{\arraybackslash}X}
+
+\newcommand{\spkA}{大山修平}
+% \newcommand{\spkB}{浜中真志}
+% \newcommand{\spkC}{立川裕二}
+% \newcommand{\spkD}{名取雅生}
+% \newcommand{\spkE}{西中祐介}
+
+\newcommand{\instA}{University of Vienna}
+% \newcommand{\instB}{名古屋大学 多元数理科学研究科}
+% \newcommand{\instC}{東京大学 Kavli IPMU}
+% \newcommand{\instD}{東京大学}
+% \newcommand{\instE}{名古屋大学 多元数理科学研究科}
+
+\newcommand{\titleA}{Higher Berry phaseとmulti-wave function overlapについて}
+% \newcommand{\titleAA}{The $(\infty,\, n)$-category of Bordisms and Topological Quantum Field Theory}
+% \newcommand{\titleB}{ADHM構成法入門}
+% \newcommand{\titleBB}{ADHM構成法のDブレーン解釈}
+% \newcommand{\titleC}{Anomaly cancellation in superstring theory: a review}
+% \newcommand{\titleD}{Cobordism hypothesis and three-dimensional TQFTs}
+% \newcommand{\titleE}{Introduction to factorization algebras}
+% \newcommand{\titleEE}{Factorization envelopes and enveloping vertex algebras}
+
+\newcommand{\abst}[5]{
+    \Large
+    \textbf{#1}
+    \normalsize
+    
+    \vspace{10pt}
+
+    \textbf{講演者} #2（#3）
+
+    \textbf{講演時間} #4
+
+    \vspace{5pt}
+
+    % \textbf{概要} 
+    \begin{quote}
+        #5
+    \end{quote}
+
+    \vspace{10pt}
+}
+
+\begin{document}
+
+\title{RFCMP2025 ハイブリッドセミナー}
+\author{理化学研究所 研究本館 345-347}
+\date{2025年12月15日 (月)}
+\maketitle
+
+このセミナーはハイブリッド形式（対面 \& zoom）で実施します．参加登録は \url{https://indico.global/event/15991/} から行なってください\footnote{録画は\url{https://www.youtube.com/playlist?list=PL0NxEH3e9L7CToeQSRKA9XHa3fdIAz_Ae}から視聴できます．}．
+特に，\textbf{対面参加希望者は必ず参加登録を行なってください．}
+
+\section*{12月15日 (月)}
+\vspace{-10pt}
+\begin{table}[H]
+    \centering
+    \begin{tabularx}{0.8\linewidth}{llY}
+        \toprule
+        \multicolumn{1}{l}{\textbf{時間}}
+        &\multicolumn{1}{l}{\textbf{講演者}}
+        &\multicolumn{1}{l}{\textbf{タイトル}} \\
+        \midrule
+        % 10:00-11:30 &\spkA &\titleA \\
+        % 11:30-13:00 & &昼休憩 \\
+        13:00-14:30 &\spkA &\titleA \\
+        15:00-16:30 &\spkA &\titleA \\
+        % 17:00-18:30 &\spkB &\href{https://youtu.be/1ug-Wihe9xs}{\titleBB} \\
+    \end{tabularx}
+\end{table}%
+
+% \section*{9月25日 (木)}
+% \vspace{-10pt}
+% \begin{table}[H]
+%     \centering
+%     \begin{tabularx}{0.8\linewidth}{llY}
+%         \toprule
+%         \multicolumn{1}{l}{\textbf{時間}}
+%         &\multicolumn{1}{l}{\textbf{講演者}}
+%         &\multicolumn{1}{l}{\textbf{タイトル}} \\
+%         \midrule
+%         10:30-12:00 &\spkC &\href{https://youtu.be/K9ZWQPkibxk}{\titleC} \\
+%         12:00-13:00 & &昼休憩 \\
+%         13:00-14:30 &\spkC &\href{https://youtu.be/rhHHrmUZW7s}{\titleC} \\
+%         15:00-16:30 &\spkD &\href{https://youtu.be/xow1kzEf_n4}{\titleD} \\
+%         17:00-18:30 &\spkD &\href{https://youtu.be/r9ZAzNKk3sM}{\titleD} \\
+%     \end{tabularx}
+% \end{table}%
+
+% \section*{9月26日 (金)}
+% \vspace{-10pt}
+% \begin{table}[H]
+%     \centering
+%     \begin{tabularx}{0.8\linewidth}{llY}
+%         \toprule
+%         \multicolumn{1}{l}{\textbf{時間}}
+%         &\multicolumn{1}{l}{\textbf{講演者}}
+%         &\multicolumn{1}{l}{\textbf{タイトル}} \\
+%         \midrule
+%         10:00-11:30 &\spkE &\href{https://youtu.be/jAWyYJTi5zc}{\titleE} \\
+%         13:00-14:30 &\spkE &\href{https://youtu.be/MbUUQUOODo8}{\titleEE} \\
+%     \end{tabularx}
+% \end{table}%
+
+\section*{\underline{概要集}}
+
+\section*{12月15日（月）}
+
+\abst{\titleA}{\spkA}{\instA}{13:00-14:30, 15:00-16:30}{
+    多体系における幾何学的位相，すなわちhigher Berry phaseに関する最近の進展を概説する．特にこれらの定式化の上で有用となる複数の状態に対する内積，すなわちmulti-wave function overlapについて説明し，tensor networkおよび場の理論を用いた実装について議論する．
+}
+
+% \abst{\titleAA}{\spkA}{\instA}{13:00-14:30}{
+%     In the second lecture, we define the \protect $(\infty,n)$-category \protect $\mathrm{Bord}_{n}^{\mathrm{fr}}$ and introduce TQFTs. \\\relax
+    
+%     Finally, we discuss the Cobordism Hypothesis, a remarkable result asserting that a TQFT is determined entirely by its value on a point.
+% }
+
+% \vspace{30pt}
+
+% \abst{\titleB}{\spkB}{\instB}{15:00-16:30}{
+%     Atiyah-Drinfeld-Hitchin-Manin (ADHM)構成法とは、反自己双対(ASD)ヤン・ミルズ方程式のインスタントン解(大域解の一つ)を線形代数の手法で求める方法である。これはインスタントン・モジュライ空間とADHMモジュライ空間の１対１対応に基づく。(ここでモジュライ空間とは解空間をある自由度で割ったもの。) この講演では、Fourier-Mukai-Nahm変換の視点から、4次元ユークリッド空間上インスタントンについてこの1対1対応の理由を説明し、インスタントン解のADHM構成を詳しく紹介する。余裕があれば非可換空間への拡張やBPSモノポールのNahm構成についても触れる。
+% }
+
+% \abst{\titleBB}{\spkB}{\instB}{17:00-18:30}{
+%     Dブレーンとは弦理論のソリトンの一つで、その上にゲージ理論が定義される。2種類のDブレーンをうまく組み合わせると、ADHM構成法・Nahm構成法などが再現される。この講演では、Dブレーン上のゲージ理論に関するいくつかの事実を紹介し、それを基にADHM構成法のDブレーン解釈を説明する。余裕があれば非可換空間への拡張やBPSモノポールのNahm構成についても触れる。
+% }
+
+% \newpage
+
+% \section*{9月25日（木）}
+
+% \abst{\titleC}{\spkC}{\instC}{10:30-12:00, 13:00-14:30}{
+%     Anomalies in superstring theories are known to cancel via subtle mechanisms. We begin with the standard perturbative anomaly cancellation, which works uniformly across all theories. \\\relax
+    
+%     We then move on to the discussion of the global anomaly cancellation, whose mechanism varies depending on the type of superstring theories in question.
+% }
+
+% \abst{\titleD}{\spkD}{\instD}{15:00-16:30}{
+%     The cobordism hypothesis, proposed by Baez and Doran, states that a fully extended topological quantum field theory (TQFT) corresponds to a fully dualizable object of the target category as the image of a point. A sketch of a proof has been announced by Lurie, but a complete rigorous proof has not yet been published. In this talk, I will explain the statement concerning the cobordism category and present a sketch of the sketch of its proof.
+% }
+
+% \abst{\titleD}{\spkD}{\instD}{17:00-18:30}{
+%     As a concrete example to which the cobordism hypothesis applies, one can mention the 3-dimensional TQFT of Turaev and Viro. This theory constructs a TQFT from a given spherical fusion category. In fact, a spherical fusion category gives rise to a 3-dimensional TQFT because it determines a fully dualizable object in a certain 3-category. In this talk I will explain this construction, and, time permitting, I will also touch on the Witten–Reshetikhin–Turaev theory and the Crane–Yetter theory.
+% }
+
+% \newpage
+
+% \section*{9月26日（金）}
+
+% \abst{\titleE}{\spkE}{\instE}{10:00-11:30}{
+%     Costello-Gwilliamの因子化代数は場の理論における観測可能量の空間がもつ構造を抽象化して得られる数学的対象である。この講演では因子化代数の導入から始めて、基本的なクラスである局所一定(locally constant)な因子化代数について解説する。特に実直線上の局所一定な因子化代数と結合代数の圏同値を説明し、さらに因子化包絡(factorization envelope)を用いて Lie環の普遍包絡環に対応する因子化代数を構成する。
+% }
+
+% \abst{\titleEE}{\spkE}{\instE}{13:00-14:30}{
+%     頂点代数は2次元共形場理論の代数的な枠組みとして知られている代数系である。2次元共形場理論は場の理論の一種なので、複素平面上の因子化代数と頂点代数の間に自然な関係があると期待される。実際、CostelloとGwilliamは複素平面上の因子化代数から頂点代数を構成する一般的方法を与えた。本講演の一つ目の目標はこの構成を解説することである。またCostelloとGwilliamは因子化包絡を用いてアフィン頂点代数とbeta-gamma頂点代数に対応する因子化代数を個別に構成している。アフィン頂点代数やbeta-gamma頂点代数は頂点Lie代数の包絡頂点代数(enveloping vertex algebra)として実現できるので、彼らの構成の一般化が考えられる。本講演の二つ目の目標はこの一般化を説明すること、つまり包絡頂点代数に対応する因子化代数を頂点Lie代数から構成することである。
+% }
+
+\end{document}
