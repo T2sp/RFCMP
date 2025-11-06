@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.18.0 (TeX Live 2024/Homebrew)  (format=lualatex 2024.3.10)  27 OCT 2025 22:23
+This is LuaHBTeX, Version 1.18.0 (TeX Live 2024/Homebrew)  (format=lualatex 2024.3.10)  6 NOV 2025 22:23
  restricted system commands enabled.
  file:line:error style messages enabled.
 **/Users/t2space/Desktop/RFCMP/timetable2025-Ohyama.tex
@@ -1283,7 +1283,7 @@ Here is how much of LuaTeX's memory you used:
  113 fonts using 63315751 bytes
  125i,10n,128p,1893b,804s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/fonts/opentype/public/lm/lmmono8-regular.otf></opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/fonts/opentype/public/lm/lmroman6-regular.otf></opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/fonts/opentype/public/lm/lmroman12-bold.otf></opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/fonts/opentype/public/lm/lmsans12-regular.otf></opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/fonts/opentype/public/haranoaji/HaranoAjiGothic-Medium.otf></opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/fonts/opentype/public/lm/lmroman7-regular.otf></opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/fonts/opentype/public/lm/lmmono10-regular.otf></opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/fonts/opentype/public/lm/lmroman10-regular.otf></opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/fonts/opentype/public/lm/lmroman12-regular.otf></opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/fonts/opentype/public/haranoaji/HaranoAjiMincho-Regular.otf></opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/fonts/opentype/public/lm/lmroman17-regular.otf>
-Output written on timetable2025-Ohyama.pdf (1 page, 65284 bytes).
+Output written on timetable2025-Ohyama.pdf (1 page, 65774 bytes).
 
 PDF statistics: 100 PDF objects out of 1000 (max. 8388607)
  63 compressed objects within 1 object stream
