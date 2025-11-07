@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.18.0 (TeX Live 2024/Homebrew)  (format=lualatex 2024.3.10)  6 NOV 2025 22:23
+This is LuaHBTeX, Version 1.18.0 (TeX Live 2024/Homebrew)  (format=lualatex 2024.3.10)  7 NOV 2025 16:20
  restricted system commands enabled.
  file:line:error style messages enabled.
 **/Users/t2space/Desktop/RFCMP/timetable2025-Ohyama.tex
@@ -1274,16 +1274,16 @@ Package rerunfilecheck Info: File `timetable2025-Ohyama.out' has not changed.
 )
 
 Here is how much of LuaTeX's memory you used:
- 37318 strings out of 476447
+ 37320 strings out of 476447
  125244,1977958 words of node,token memory allocated
  1179 words of node memory still in use:
    10 hlist, 2 vlist, 5 rule, 3 glue, 4 kern, 1 glyph, 236 attribute, 62 glue_spec, 33 attribute_list, 2 write, 13 user_defined, 1 pdf_action nodes
-   avail lists: 1:13,2:20002,3:297,4:314,5:174,6:47,7:3758,8:72,9:1197,10:10,11:66
- 58493 multiletter control sequences out of 65536+600000
+   avail lists: 1:13,2:20014,3:297,4:314,5:174,6:47,7:3755,8:72,9:1203,10:10,11:63
+ 58495 multiletter control sequences out of 65536+600000
  113 fonts using 63315751 bytes
  125i,10n,128p,1893b,804s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/fonts/opentype/public/lm/lmmono8-regular.otf></opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/fonts/opentype/public/lm/lmroman6-regular.otf></opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/fonts/opentype/public/lm/lmroman12-bold.otf></opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/fonts/opentype/public/lm/lmsans12-regular.otf></opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/fonts/opentype/public/haranoaji/HaranoAjiGothic-Medium.otf></opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/fonts/opentype/public/lm/lmroman7-regular.otf></opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/fonts/opentype/public/lm/lmmono10-regular.otf></opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/fonts/opentype/public/lm/lmroman10-regular.otf></opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/fonts/opentype/public/lm/lmroman12-regular.otf></opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/fonts/opentype/public/haranoaji/HaranoAjiMincho-Regular.otf></opt/homebrew/Cellar/texlive/20240312_3/share/texmf-dist/fonts/opentype/public/lm/lmroman17-regular.otf>
-Output written on timetable2025-Ohyama.pdf (1 page, 65774 bytes).
+Output written on timetable2025-Ohyama.pdf (1 page, 66187 bytes).
 
 PDF statistics: 100 PDF objects out of 1000 (max. 8388607)
  63 compressed objects within 1 object stream
