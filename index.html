@@ -220,9 +220,80 @@
             </div>
         </section>
         
+        <!-- 対面研究会その1 -->
         <section class="bg-white shadow-md rounded-2xl p-6 space-y-4">
         <h2 class="text-2xl font-semibold">
-            次回の対面開催
+            12月の対面研究会
+        </h2>
+        <!-- 左カラム：日時・会場・タイムテーブル -->
+        <div class="flex flex-col space-y-4">
+            <div class="flex flex-col md:flex-row justify-center items-center gap-8">
+                <div class="flex flex-col items-center space-y-4">
+                    <div class="flex items-center space-x-2 text-gray-700">
+                        <svg class="w-6 h-6 text-blue-500" fill="none" stroke="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M8 7V3m8 4V3m-9 8h10m-10 4h10m-6 4h2m6-12v12a2 2 0 01-2 2H6a2 2 0 01-2-2V7a2 2 0 012-2h2" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+                            </path>
+                        </svg>
+                        <span>
+                        2025/12/8 (月) - 2025/12/10 (水)
+                        </span>
+                    </div>
+                    <!-- 会場：ビル → 場所ピン -->
+                    <div class="flex items-center space-x-2 text-gray-700">
+                        <svg class="w-6 h-6 text-blue-500" fill="none" stroke="currentColor" 
+                            viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <!-- map-pin (outline) -->
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M19.5 10.5c0 7.5-7.5 11.25-7.5 11.25S4.5 18 4.5 10.5a7.5 7.5 0 1115 0z" />
+                        </svg>
+                        <span>
+                            <!-- 東京大学 本郷キャンパス 理学部1号館 -->
+                            基礎物理学研究所 研究棟 K206
+                        </span>
+                    </div>
+        
+                    <!-- タイムテーブル：ビル → 時計 -->
+                    <div class="flex items-center space-x-2 text-gray-700">
+                        <svg class="w-6 h-6 text-blue-500" fill="none" stroke="currentColor"
+                            viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <!-- clock (outline) -->
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M12 6v6h4.5M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                        <span>
+                            <a href="./out/timetable2025-mini-FH.pdf" class="text-blue-600 underline">タイムテーブル</a>
+                        </span>
+                    </div>
+            </div>
+        
+            <!-- 右カラム：Google Map (YITP)-->
+            <div class="flex-shrink-0">
+                <iframe allowfullscreen="" 
+                    class="flex-1 max-w-md rounded-md shadow-md" 
+                    height="150" 
+                    width="100%" 
+                    loading="lazy" 
+                    style="border:0;"
+                    referrerpolicy="no-referrer-when-downgrade" 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6534.043132753797!2d135.78355607626662!3d35.03119037280414!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x600108543bb0e323%3A0xe341e04e85155c27!2z44CSNjA2LTgyNjcg5Lqs6YO95bqc5Lqs6YO95biC5bem5Lqs5Yy65YyX55m95bed6L-95YiG55S65Z-656SO54mp55CG5a2m56CU56m25omA77yI56CU56m25qOf77yJ!5e0!3m2!1sja!2sjp!4v1763109557219!5m2!1sja!2sjp">
+                </iframe>
+            </div>
+        </section>
+        
+        <div class="text-center">
+            <a href="https://indico.global/event/16030/" target="_blank" class="inline-block bg-blue-600 text-white px-6 py-2 rounded-xl shadow hover:bg-blue-700 t e x t - b l u e - 6 0 0 u n d e r l i n e" href="#">
+            <!-- <a href="https://indico.global/event/15131/" target="_blank" class="inline-block bg-blue-600 text-white px-6 py-2 rounded-xl shadow hover:bg-blue-700 t e x t - b l u e - 6 0 0 u n d e r l i n e" href="#"> -->
+            <!-- <a class="inline-block bg-gray-600 text-white px-6 py-2 rounded-xl shadow hover:bg-blue-700 t e x t - b l u e - 6 0 0 u n d e r l i n e" href="https://indico.global/category/1306/"> -->
+                参加
+            </a>
+        </div>
+
+        <!-- 対面研究会その2 -->
+        <section class="bg-white shadow-md rounded-2xl p-6 space-y-4">
+        <h2 class="text-2xl font-semibold">
+            12月のハイブリッドセミナー
         </h2>
         <!-- 左カラム：日時・会場・タイムテーブル -->
         <div class="flex flex-col space-y-4">
@@ -268,7 +339,7 @@
                     </div>
             </div>
         
-            <!-- 右カラム：Google Map -->
+            <!-- 右カラム：Google Map (RIKEN)-->
             <div class="flex-shrink-0">
                 <iframe allowfullscreen="" 
                     class="flex-1 max-w-md rounded-md shadow-md" 
@@ -283,8 +354,8 @@
         </section>
         
         <div class="text-center">
-            <a href="https://indico.global/category/1303/" target="_blank" class="inline-block bg-blue-600 text-white px-6 py-2 rounded-xl shadow hover:bg-blue-700 t e x t - b l u e - 6 0 0 u n d e r l i n e" href="#">
-            <!-- <a href="https://indico.global/event/15131/" target="_blank" class="inline-block bg-blue-600 text-white px-6 py-2 rounded-xl shadow hover:bg-blue-700 t e x t - b l u e - 6 0 0 u n d e r l i n e" href="#"> -->
+            <!-- <a href="https://indico.global/category/1303/" target="_blank" class="inline-block bg-blue-600 text-white px-6 py-2 rounded-xl shadow hover:bg-blue-700 t e x t - b l u e - 6 0 0 u n d e r l i n e" href="#"> -->
+            <a href="https://indico.global/event/15991/" target="_blank" class="inline-block bg-blue-600 text-white px-6 py-2 rounded-xl shadow hover:bg-blue-700 t e x t - b l u e - 6 0 0 u n d e r l i n e" href="#">
             <!-- <a class="inline-block bg-gray-600 text-white px-6 py-2 rounded-xl shadow hover:bg-blue-700 t e x t - b l u e - 6 0 0 u n d e r l i n e" href="https://indico.global/category/1306/"> -->
                 参加
             </a>
