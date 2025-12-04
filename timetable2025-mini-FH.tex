@@ -3,7 +3,7 @@
 %%%%%%%%%%packages%%%%%%%%%%
 %% colors and links
 \usepackage[svgnames]{xcolor}
-\usepackage[colorlinks,citecolor=DarkGreen,linkcolor=DeepPink,linktocpage,unicode]{hyperref} 
+\usepackage{hyperref} 
 
 %% equations
 %%%% math
@@ -79,6 +79,11 @@
 \usepackage{myQM}
 
 %%%%%%%%%%optional settings%%%%%%%%%%
+\hypersetup{
+    colorlinks,citecolor=DarkGreen,linkcolor=DeepPink,linktocpage,unicode,
+    pdfauthor={Toshinori Takama},
+    pdftitle={timetable2025-mini-FH}
+}
 
 %%%%%図表並列%%%%%
 \makeatletter
