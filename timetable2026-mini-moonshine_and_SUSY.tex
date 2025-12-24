@@ -1,0 +1,265 @@
+\documentclass{ltjsarticle}
+
+%%%%%%%%%%packages%%%%%%%%%%
+%% colors and links
+\usepackage[svgnames]{xcolor}
+\usepackage{hyperref} 
+
+%% equations
+%%%% math
+\usepackage{amsmath,amsfonts,amssymb,amsthm}
+\usepackage{mathtools}
+\usepackage{mathrsfs}
+\usepackage{bm}
+\usepackage{cancel}
+\usepackage{dsfont}
+%%%% physics
+\usepackage{siunitx}
+\usepackage{physics}
+%%%% chemistry
+\usepackage[version=3]{mhchem}
+
+%% positioning
+\usepackage{array}
+\usepackage{float}
+
+%% table
+\usepackage{booktabs}
+\usepackage{multirow}
+\usepackage{hhline}
+\usepackage{caption}
+\captionsetup{format=hang}
+\usepackage{subcaption}
+
+%% figure
+\usepackage{graphicx}
+\usepackage{tikz}
+
+%% decorations
+\usepackage{titlesec}
+\usepackage{picture}
+
+%% framing
+\usepackage{fancybox}
+\usepackage{boites}
+\usepackage{tcolorbox}
+\tcbuselibrary{skins,theorems,breakable}
+
+%% citation
+\usepackage{cite}
+
+%% miscellaneous
+%%%% comment
+\usepackage{comment}
+%%%% Japanese
+\usepackage{ascmac}
+\usepackage{listings} %日本語のコメントアウトをする場合jlisting（もしくはjvlisting）が必要
+\lstset{
+    basicstyle={\ttfamily},
+    identifierstyle={\small},
+    commentstyle={\smallitshape},
+    keywordstyle={\small\bfseries},
+    ndkeywordstyle={\small},
+    stringstyle={\small tfamily},
+    frame={tb},
+    breaklines=true,
+    columns=[l]{fullflexible},
+    numbers=left,
+    xrightmargin=0pt,
+    xleftmargin=27pt,
+    numberstyle={\scriptsize},
+    stepnumber=1,
+    lineskip=-0.5ex
+}
+
+%%macros
+\usepackage{mylogics}
+\usepackage{myalgebra}
+\usepackage{mygeometry}
+\usepackage{myQM}
+\usepackage{tabularx}
+\newcolumntype{Y}{>{\arraybackslash}X}
+
+%%%%%%%%%%optional settings%%%%%%%%%%
+\hypersetup{
+    colorlinks,citecolor=DarkGreen,linkcolor=DeepPink,linktocpage,unicode,
+    pdfauthor={Toshinori Takama},
+    pdftitle={timetable2025-mini-FH}
+}
+
+%%%%%図表並列%%%%%
+\makeatletter
+\newcommand{\figcaption}[1]{\def\@captype{figure}\caption{#1}}
+\newcommand{\tblcaption}[1]{\def\@captype{table}\caption{#1}}
+\makeatother
+
+%%%%%itemization%%%%%
+\renewcommand{\labelenumi}{\theenumi}
+\renewcommand{\theenumi}{(\arabic{enumi})} % 箇条書きをローマ数字に
+
+%%%%%%theorem environments%%%%%
+\newtheoremstyle{mystyle}%   % スタイル名
+    {}%                      % 上部スペース
+    {}%                      % 下部スペース
+    {\normalfont}%          % 本文フォント
+    {}%                      % インデント量
+    {\bf}%                  % 見出しフォント
+    {.}%                      % 見出し後の句読点
+    {\newline}%                     % 見出し後のスペース
+    {\underline{\thmname{#1}\thmnumber{#2}\thmnote{（#3）}}}%
+    % 見出しの書式 (can be left empty, meaning `normal')
+\theoremstyle{mystyle} % スタイルの適用
+
+\newtheorem{theorem}{定理}[section]
+\newtheorem{definition}{定義}[section]
+\newtheorem{proposition}[definition]{命題}
+\newtheorem{corollary}[theorem]{系}
+\renewcommand{\proofname}{証明}
+
+%proof
+\makeatletter % use at mark
+\renewcommand{\qedsymbol}{$\blacksquare$}
+\renewenvironment{proof}[1][\proofname]{\par
+    \pushQED{\qed}%
+    \normalfont \topsep6\p@\@plus6\p@\relax
+    \trivlist
+    \item[\hskip\labelsep
+        \itshape
+    \textbf{\underline{#1}}]\ignorespaces
+    % {\bf\underline{#1}\@addpunct{.}}]\ignorespaces % ピリオドあり
+}{%
+    \popQED\endtrivlist\@endpefalse
+}
+\makeatother % end at mark
+
+%%%%%%mathtools%%%%%
+\mathtoolsset{showonlyrefs=true} % 被参照数式のみ数式番号割り振り
+\numberwithin{equation}{section}
+
+\makeatletter
+\@addtoreset{equation}{section}
+\makeatother
+
+%%%%%%framing%%%%%
+
+\mathchardef\mhyphen="2D
+
+\newcommand{\lto}{\longrightarrow}
+\newcommand{\lmto}{\longmapsto}
+\newcommand{\btl}{\blacktriangleleft}
+\newcommand{\btr}{\blacktriangleright}
+
+\newcommand{\spkA}{岡田昌樹}
+\newcommand{\spkB}{石毛新}
+% \newcommand{\spkC}{Tomohiro Shigemura}
+% \newcommand{\spkD}{名取雅生}
+% \newcommand{\spkE}{西中祐介}
+
+\newcommand{\instA}{Kavli IPMU}
+\newcommand{\instB}{KEK}
+% \newcommand{\instC}{京都大学}
+% \newcommand{\instD}{東京大学}
+% \newcommand{\instE}{名古屋大学 多元数理科学研究科}
+
+\newcommand{\titleA}{moonshine現象の紹介}
+% \newcommand{\titleAA}{The $(\infty,\, n)$-category of Bordisms and Topological Quantum Field Theory}
+\newcommand{\titleB}{TBA}
+% \newcommand{\titleBB}{Factorization Homology of Unorientable Surfaces (Research Talk)}
+% \newcommand{\titleC}{Toward factorization homological description of Chern-Simons/Wess-Zumino-Witten correspondence}
+% \newcommand{\titleD}{Cobordism hypothesis and three-dimensional TQFTs}
+% \newcommand{\titleE}{Introduction to factorization algebras}
+% \newcommand{\titleEE}{Factorization envelopes and enveloping vertex algebras}
+
+\newcommand{\abst}[5]{
+    \Large
+    \textbf{#1}
+    \normalsize
+    
+    \vspace{10pt}
+
+    \textbf{講演者} #2（#3）
+
+    \textbf{講演時間} #4
+
+    \vspace{5pt}
+
+    % \textbf{概要} 
+    \begin{quote}
+        #5
+    \end{quote}
+
+    \vspace{10pt}
+}
+
+\newcommand{\LB}{Lunch Break}
+\newcommand{\FD}{Free Discussion}
+
+\begin{document}
+
+\title{RFCMP2026 \\ Mini Workshop on Moonshine Theory and SUSY QFT}
+\author{理化学研究所 研究本館 359号室}
+\date{2026年2月25日 (水) - 26日 (木)}
+\maketitle
+
+このセミナーはハイブリッド形式（対面 \& zoom）で実施します．
+参加登録は \url{https://indico.global/event/16133/} から行なってください
+% \footnote{録画は\url{https://www.youtube.com/playlist?list=PL0NxEH3e9L7CToeQSRKA9XHa3fdIAz_Ae}から視聴できます．}
+．
+% なお，\spkA 氏の講演は録画を行いませんのでご了承ください．
+% 特に，\textbf{対面参加希望者は必ず参加登録を行なってください．}
+
+\section*{2月25日 (水)}
+\vspace{-10pt}
+\begin{table}[H]
+    \centering
+    \begin{tabularx}{0.8\linewidth}{llY}
+        \toprule
+        \multicolumn{1}{l}{\textbf{時間}}
+        &\multicolumn{1}{l}{\textbf{講演者}}
+        &\multicolumn{1}{l}{\textbf{タイトル}} \\
+        \midrule
+        % 10:00-11:30 &\spkA &\titleA \\
+        % 11:30-13:00 & &昼休憩 \\
+        13:00-14:30 &\spkA &\titleA \\
+        15:00-16:30 &\spkA &\titleA \\
+        % 16:30-18:00 & &\FD \\
+    \end{tabularx}
+\end{table}%
+
+\section*{2月26日 (木)}
+\vspace{-10pt}
+\begin{table}[H]
+    \centering
+    \begin{tabularx}{0.8\linewidth}{llY}
+        \toprule
+        \multicolumn{1}{l}{\textbf{時間}}
+        &\multicolumn{1}{l}{\textbf{講演者}}
+        &\multicolumn{1}{l}{\textbf{タイトル}} \\
+        \midrule
+        % 10:30-12:00 &\spkC &\href{https://youtu.be/K9ZWQPkibxk}{\titleC} \\
+        % 12:00-13:00 & &昼休憩 \\
+        13:00-14:30 &\spkB &\titleB \\
+        15:00-16:30 &\spkB &\titleB \\
+        % 16:30-18:00 & &\FD \\
+    \end{tabularx}
+\end{table}%
+
+\section*{\underline{概要集}}
+
+\section*{2月25日（水）}
+
+\abst{\titleA}{\spkA}{\instA}{13:00-14:30, 15:00-16:30}{
+    moonshine現象は、典型的にはmodular form（やweak Jacobi form）の係数に有限群（特に散在型有限単純群）の表現次元が現れるという形で観測される現象であり、いくつかの例では背後に頂点作用素代数という構造が存在することによって、理論的説明が与えられている。頂点作用素代数は、物理における二次元共形場理論を数学的に記述する枠組みを与え、この文脈では、modular formは理論の分配関数、有限群は理論の対称性群として理解することができる。
+
+    セミナー前半では、散在型有限単純群や群の拡大といった群論の基本的な話題を導入した後、最も古典的なmoonshine現象の例であるmonstrous moonshineについて説明する。
+
+    セミナー後半では、近年moonshine以外の数理物理においても議論が進展しているConway moonshine moduleを紹介する。時間に応じて、Conway moonshine moduleのStolz--Teichner予想との関連や、未だに満足な理解が得られていないK3 Mathieu moonshineの現状についても言及したい。
+}
+
+\section*{2月26日（木）}
+
+\abst{\titleB}{\spkB}{\instB}{13:00-14:30, 15:00-16:30}{
+    
+}
+
+\end{document}
